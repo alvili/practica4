@@ -2,9 +2,10 @@
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/linearLayout"
+    android:id="@+id/idLayout"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#C3F3EB">
 
     <TextView
         android:id="@+id/idPais"
@@ -23,8 +24,8 @@
 
     <ImageView
         android:id="@+id/idBandera"
-        android:layout_width="162dp"
-        android:layout_height="126dp"
+        android:layout_width="163dp"
+        android:layout_height="111dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
@@ -36,7 +37,7 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/guideline3"
         app:layout_constraintTop_toTopOf="@+id/guideline"
-        app:layout_constraintVertical_bias="0.016"
+        app:layout_constraintVertical_bias="0.0"
         tools:srcCompat="@tools:sample/avatars[2]" />
 
     <android.support.constraint.Guideline
@@ -44,14 +45,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="16dp" />
+        app:layout_constraintGuide_begin="4dp" />
 
     <android.support.constraint.Guideline
         android:id="@+id/guideline2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="164dp" />
+        app:layout_constraintGuide_begin="196dp" />
 
     <android.support.constraint.Guideline
         android:id="@+id/guideline3"
@@ -65,7 +66,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="45dp" />
+        app:layout_constraintGuide_begin="28dp" />
 
     <TextView
         android:id="@+id/textView"
@@ -146,8 +147,8 @@
 
     <TextView
         android:id="@+id/idBorders"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="308dp"
+        android:layout_height="72dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
@@ -160,19 +161,19 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="72dp" />
+        app:layout_constraintGuide_begin="55dp" />
 
     <android.support.constraint.Guideline
         android:id="@+id/guideline6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="99dp" />
+        app:layout_constraintGuide_begin="82dp" />
 
     <android.support.constraint.Guideline
         android:id="@+id/guideline7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="126dp" />
+        app:layout_constraintGuide_begin="109dp" />
 </android.support.constraint.ConstraintLayout>

@@ -17,10 +17,11 @@ import retrofit2.Response; //Modeliza la respuesta http
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-
 public class MainActivity extends AppCompatActivity {
 
     private ListView listView;
+    private ApiRest apiRest;
+    private List<Country> countries;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,37 +36,46 @@ public class MainActivity extends AppCompatActivity {
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
-        ApiRest apiRest = retrofit.create(ApiRest.class);
+        apiRest = retrofit.create(ApiRest.class);
 
-        Call<List<Country>> call = apiRest.getAll();
-
-        //En otros lenguajes, este objeto Call seria una Promise de que habrá datos
-
-        //Esto se ejecuta cuando llega la respuesta
-        call.enqueue(new Callback<List<Country>>() {
-            @Override
-            public void onResponse(Call<List<Country>> call, Response<List<Country>> response) {
-                if (!response.isSuccessful()){
-                    Log.d("**","code: " + response.code());
-                    return;
-                }
-
-                //recupero los datos
-                List<Country> countries = response.body();
-
-                //Instancio adaptador
-                CountriesAdapters countriesAdapter = new CountriesAdapters(MainActivity.this, countries);
-
-                //asigno el adaptador al ListView
-                listView.setAdapter(countriesAdapter);
-
-            }
-
-            @Override
-            public void onFailure(Call<List<Country>> call, Throwable t) {
-
-            }
-        });
+        //Recupero los datos
+        getCountries();
 
     }
+
+    void getCountries(){
+
+            Call<List<Country>> call = apiRest.getAll();
+
+            //En otros lenguajes, este objeto Call seria una Promise de que habrá datos
+
+            //Esto se ejecuta cuando llega la respuesta
+            call.enqueue(new Callback<List<Country>>() {
+                @Override
+                public void onResponse(Call<List<Country>> call, Response<List<Country>> response) {
+                    if (!response.isSuccessful()){
+                        Log.d("**","code: " + response.code());
+                        return;
+                    }
+
+                    //recupero los datos
+                    countries = response.body();
+
+                    //Instancio adaptador
+                    CountriesAdapters countriesAdapter = new CountriesAdapters(MainActivity.this, countries);
+
+                    //asigno el adaptador al ListView
+                    listView.setAdapter(countriesAdapter);
+
+                }
+
+                @Override
+                public void onFailure(Call<List<Country>> call, Throwable t) {
+
+                }
+            });
+
+    }
+
+
 }

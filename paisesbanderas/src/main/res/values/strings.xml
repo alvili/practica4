@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">paisesbanderas</string>
-    <string name="borders">Paises Frontera: </string>
-    <string name="demonym">Gentilicio: </string>
-    <string name="population">Población: </string>
+    <string name="borders">Borders: </string>
+    <string name="demonym">Demonym: </string>
+    <string name="population">Population: </string>
     <string name="capital">Capital: </string>
 </resources>
