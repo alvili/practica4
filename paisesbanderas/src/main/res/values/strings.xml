@@ -4,4 +4,5 @@
     <string name="demonym">Demonym: </string>
     <string name="population">Population: </string>
     <string name="capital">Capital: </string>
+    <string name="region">Region:</string>
 </resources>

@@ -1,10 +1,14 @@
-package com.abcsoft.paisesbanderas;
+package com.abcsoft.paisesbanderas.activities;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
+import com.abcsoft.paisesbanderas.R;
 import com.abcsoft.paisesbanderas.adapters.CountriesAdapters;
 import com.abcsoft.paisesbanderas.model.Country;
 import com.abcsoft.paisesbanderas.retrofit.ApiRest;
@@ -37,6 +41,16 @@ public class MainActivity extends AppCompatActivity {
                 .build();
 
         apiRest = retrofit.create(ApiRest.class);
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                //Lanzo un intent a los detalles del pais
+                Intent intent = new Intent(MainActivity.this, CountryDetailsActivity.class);
+                intent.putExtra("countryCode", countries.get(position).getAlpha3Code() );
+                startActivity(intent);
+            }
+        });
 
         //Recupero los datos
         getCountries();
@@ -76,6 +90,7 @@ public class MainActivity extends AppCompatActivity {
             });
 
     }
+
 
 
 }

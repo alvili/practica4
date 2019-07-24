@@ -1,1 +1,1 @@
-include ':app', ':paisesbanderas'
+include ':app', ':paisesbanderas', ':accesoacamara', ':accesocontactos'

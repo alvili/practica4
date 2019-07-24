@@ -1,5 +1,7 @@
 package com.abcsoft.paisesbanderas.model;
 
+import java.util.List;
+
 public class Country {
 
     private String name;
@@ -11,8 +13,36 @@ public class Country {
     private Long population;
     private String[] borders;
     private String demonym;
+    private String region;
+    private String subregion;
+    private Long area;
+//    private List<Language> languages;
 
     public Country() {
+    }
+
+    public String getRegion() {
+        return region;
+    }
+
+    public void setRegion(String region) {
+        this.region = region;
+    }
+
+    public String getSubregion() {
+        return subregion;
+    }
+
+    public void setSubregion(String subregion) {
+        this.subregion = subregion;
+    }
+
+    public Long getArea() {
+        return area;
+    }
+
+    public void setArea(Long area) {
+        this.area = area;
     }
 
     public String getName() {
