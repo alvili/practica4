@@ -5,4 +5,6 @@
     <string name="population">Population: </string>
     <string name="capital">Capital: </string>
     <string name="region">Region:</string>
+    <string name="languages">Languages:</string>
+    <string name="area">Area:</string>
 </resources>

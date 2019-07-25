@@ -85,12 +85,10 @@ public class MainActivity extends AppCompatActivity {
 
                 @Override
                 public void onFailure(Call<List<Country>> call, Throwable t) {
-
+                    Log.d("**","error: ");
                 }
             });
 
     }
-
-
 
 }

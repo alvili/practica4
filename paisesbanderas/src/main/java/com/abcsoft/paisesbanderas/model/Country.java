@@ -8,15 +8,13 @@ public class Country {
     private String alpha2Code;
     private String alpha3Code;
     private String capital;
-
-    //Añadir 3 mas
     private Long population;
     private String[] borders;
     private String demonym;
     private String region;
     private String subregion;
-    private Long area;
-//    private List<Language> languages;
+    private Double area;
+    private List<Language> languages;
 
     public Country() {
     }
@@ -37,11 +35,11 @@ public class Country {
         this.subregion = subregion;
     }
 
-    public Long getArea() {
+    public Double getArea() {
         return area;
     }
 
-    public void setArea(Long area) {
+    public void setArea(Double area) {
         this.area = area;
     }
 
@@ -100,4 +98,13 @@ public class Country {
     public void setDemonym(String demonym) {
         this.demonym = demonym;
     }
+
+    public List<Language> getLanguages() {
+        return languages;
+    }
+
+    public void setLanguages(List<Language> languages) {
+        this.languages = languages;
+    }
+
 }
